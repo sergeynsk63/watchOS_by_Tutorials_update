@@ -8,10 +8,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Cookie-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HelloAppleWatch_WatchKit_App" customModuleProvider="target">
+                <controller backgroundImage="Cookie" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HelloAppleWatch_WatchKit_App" customModuleProvider="target">
                     <items>
                         <button width="1" height="0.90000000000000002" alignment="center" verticalAlignment="bottom" title="Button" id="RPX-d5-GwH">
                             <fontDescription key="font" type="system" pointSize="22"/>
