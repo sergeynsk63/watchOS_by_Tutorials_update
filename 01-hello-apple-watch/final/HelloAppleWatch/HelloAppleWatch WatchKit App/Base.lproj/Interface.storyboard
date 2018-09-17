@@ -13,7 +13,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HelloAppleWatch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Hello, World!" id="q3J-oX-AX1"/>
+                        <label alignment="center" verticalAlignment="center" text="Hello, World!" id="q3J-oX-AX1">
+                            <fontDescription key="font" type="system" pointSize="24"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="label" destination="q3J-oX-AX1" id="53I-iT-vNb"/>

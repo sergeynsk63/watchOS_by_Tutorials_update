@@ -13,10 +13,25 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     @IBOutlet weak var label: WKInterfaceLabel!
     
+    let emoji = EmojiData()
+    
     override func willActivate() {
         super.willActivate()
         
-        label.setText("Hello, Apple Watch!")
+        // 1
+        let people = emoji.people.randomElement()
+        let nature = emoji.nature.randomElement()
+        let objects = emoji.objects.randomElement()
+        let places = emoji.places.randomElement()
+        let symbols = emoji.symbols.randomElement()
+        // 2
+        if let people = people,
+            let nature = nature,
+            let objects = objects,
+            let places = places,
+            let symbols = symbols {
+            label.setText(people + nature + objects + places + symbols)
+        }
     }
     
 }
