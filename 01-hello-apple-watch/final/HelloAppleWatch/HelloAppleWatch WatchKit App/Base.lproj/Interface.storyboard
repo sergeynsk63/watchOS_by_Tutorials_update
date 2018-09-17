@@ -13,12 +13,15 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HelloAppleWatch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Hello, World!" id="q3J-oX-AX1">
-                            <fontDescription key="font" type="system" pointSize="24"/>
-                        </label>
+                        <button width="1" height="0.90000000000000002" alignment="center" verticalAlignment="bottom" title="Button" id="RPX-d5-GwH">
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                            <connections>
+                                <action selector="newFortune" destination="AgC-eL-Hgc" id="EGB-Qr-TAg"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
-                        <outlet property="label" destination="q3J-oX-AX1" id="53I-iT-vNb"/>
+                        <outlet property="button" destination="RPX-d5-GwH" id="6Mc-Kc-Stt"/>
                     </connections>
                 </controller>
             </objects>

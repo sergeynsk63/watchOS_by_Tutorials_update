@@ -11,13 +11,31 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-    @IBOutlet weak var label: WKInterfaceLabel!
+    // MARK: - Outlets
+    
+    @IBOutlet weak var button: WKInterfaceButton!
+    
+    // MARK: - Model
     
     let emoji = EmojiData()
+    
+    // MARK: - Lifecycle
     
     override func willActivate() {
         super.willActivate()
         
+        showFortune()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func newFortune() {
+        showFortune()
+    }
+    
+    // MARK: - Helpers
+    
+    fileprivate func showFortune() {
         // 1
         let people = emoji.people.randomElement()
         let nature = emoji.nature.randomElement()
@@ -30,8 +48,7 @@ class InterfaceController: WKInterfaceController {
             let objects = objects,
             let places = places,
             let symbols = symbols {
-            label.setText(people + nature + objects + places + symbols)
+            button.setTitle(people + nature + objects + places + symbols)
         }
     }
-    
 }
