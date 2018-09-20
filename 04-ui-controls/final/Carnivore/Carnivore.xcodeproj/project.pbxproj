@@ -75,7 +75,7 @@
 		2974FAEA1A3E88E400AB4837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2974FB041A3E893700AB4837 /* Carnivore WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Carnivore WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2974FB071A3E893700AB4837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2974FB081A3E893700AB4837 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2974FB081A3E893700AB4837 /* InterfaceController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		2974FB0A1A3E893700AB4837 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2974FB0E1A3E893700AB4837 /* Carnivore WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carnivore WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2974FB141A3E893800AB4837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
