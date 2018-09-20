@@ -47,7 +47,18 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        self.crownSequencer.isHapticFeedbackEnabled = false
+        // 1
+        var weightItems: [WKPickerItem] = []
+        for i in 1...32 {
+            // 2
+            let item = WKPickerItem()
+            item.title = String(i)
+            weightItems.append(item)
+        }
+        // 3
+        weightPicker.setItems(weightItems)
+        // 4
+        weightPicker.setSelectedItemIndex(ounces - 1)
     }
     
     // MARK: - Helpers
