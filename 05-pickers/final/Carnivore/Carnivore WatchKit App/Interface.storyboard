@@ -26,46 +26,12 @@
                                 </button>
                             </items>
                         </group>
-                        <label alignment="center" text="Weight: 16 oz" id="bgb-8i-lVU"/>
-                        <group width="1" alignment="left" spacing="20" id="LMt-IN-n5O">
-                            <items>
-                                <button alignment="center" backgroundImage="minus" id="G5E-pE-xmP">
-                                    <connections>
-                                        <action selector="onMinusButton" destination="AgC-eL-Hgc" id="Qmb-xC-V5y"/>
-                                    </connections>
-                                </button>
-                                <button alignment="center" backgroundImage="plus" id="odt-2e-dJt">
-                                    <connections>
-                                        <action selector="onPlusButton" destination="AgC-eL-Hgc" id="ZqC-lo-r9d"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" layout="vertical" id="tWS-nc-9bx">
-                            <items>
-                                <label alignment="left" text="Label" id="AN1-YC-ONa"/>
-                                <slider width="1" alignment="left" value="2" maximum="3" steps="3" id="m5e-M4-sye">
-                                    <connections>
-                                        <action selector="onTempChange:" destination="AgC-eL-Hgc" id="htG-4s-Cpm"/>
-                                    </connections>
-                                </slider>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" id="KwU-1r-uoH">
-                            <items>
-                                <switch width="1" alignment="left" title="Metric" id="Mfo-z4-gXx">
-                                    <connections>
-                                        <action selector="onMetricChanged:" destination="AgC-eL-Hgc" id="FjS-MH-Rpl"/>
-                                    </connections>
-                                </switch>
-                            </items>
-                        </group>
+                        <picker height="100" alignment="left" id="2lB-cS-n5D"/>
                     </items>
                     <connections>
-                        <outlet property="cookLabel" destination="AN1-YC-ONa" id="Pt2-4s-Zfh"/>
                         <outlet property="timer" destination="2KO-8s-ubd" id="mdb-BY-FYP"/>
                         <outlet property="timerButton" destination="FYr-YL-YLF" id="i4c-k9-bAj"/>
-                        <outlet property="weightLabel" destination="bgb-8i-lVU" id="Ek3-f6-Rrc"/>
+                        <outlet property="weightPicker" destination="2lB-cS-n5D" id="uYy-9d-mS9"/>
                     </connections>
                 </controller>
             </objects>

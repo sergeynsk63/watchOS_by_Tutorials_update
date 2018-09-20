@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
         var unit = Constants.Weight.oz
         if usingMetric {
             // 2
-            let grams = Double(ounces) * 28.3495
+            let grams = Double(ounces) * Constants.Weight.gramsPerOunce
             weight = Int(grams)
             unit = Constants.Weight.grams
         }

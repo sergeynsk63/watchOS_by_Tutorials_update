@@ -56,7 +56,8 @@ enum MeatTemperature: Int {
 struct Constants {
     struct Weight {
         static let minOunces = 1
-        static let maxOunces = 700
+        static let maxOunces = 32
+        static let gramsPerOunce = 28.3495
         static let oz = "oz"
         static let grams = "g"
     }

@@ -40,36 +40,18 @@ class InterfaceController: WKInterfaceController {
     
     // MARK: - Outlets
     @IBOutlet weak var timer: WKInterfaceTimer!
-    @IBOutlet weak var weightLabel: WKInterfaceLabel!
-    @IBOutlet weak var cookLabel: WKInterfaceLabel!
     @IBOutlet weak var timerButton: WKInterfaceButton!
+    @IBOutlet weak var weightPicker: WKInterfacePicker!
     
     // MARK: - Lifecycle
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        updateConfiguration()
+        
+        self.crownSequencer.isHapticFeedbackEnabled = false
     }
     
     // MARK: - Helpers
-    func updateConfiguration() {
-        if ounces < Constants.Weight.minOunces {
-            ounces = Constants.Weight.minOunces
-        } else if ounces > Constants.Weight.maxOunces {
-            ounces = Constants.Weight.maxOunces
-        }
-        // 1
-        cookLabel.setText(cookTemp.stringValue)
-        var weight = ounces
-        var unit = Constants.Weight.oz
-        if usingMetric {
-            // 2
-            let grams = Double(ounces) * 28.3495
-            weight = Int(grams)
-            unit = Constants.Weight.grams
-        }
-        // 3
-        weightLabel.setText("Weight: \(weight) \(unit)")
-    }
+    
     
     // MARK: - Actions
     @IBAction func onTimerButton() {
@@ -87,27 +69,5 @@ class InterfaceController: WKInterfaceController {
         // 3
         timerRunning = !timerRunning
         scroll(to: timer, at: .top, animated: true)
-    }
-    
-    @IBAction func onMinusButton() {
-        ounces -= 1
-        updateConfiguration()
-    }
-    
-    @IBAction func onPlusButton() {
-        ounces += 1
-        updateConfiguration()
-    }
-    
-    @IBAction func onTempChange(_ value: Float) {
-        if let temp = MeatTemperature(rawValue: Int(value)) {
-            cookTemp = temp
-            updateConfiguration()
-        }
-    }
-    
-    @IBAction func onMetricChanged(_ value: Bool) {
-        usingMetric = value
-        updateConfiguration()
     }
 }
