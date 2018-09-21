@@ -26,9 +26,22 @@
                                 </button>
                             </items>
                         </group>
-                        <picker height="100" alignment="left" id="2lB-cS-n5D"/>
+                        <label alignment="center" text="Weight (oz)" id="ZLQ-mh-Gca"/>
+                        <picker height="55" alignment="left" focusStyle="stack" id="2lB-cS-n5D">
+                            <connections>
+                                <action selector="onWeightChanged:" destination="AgC-eL-Hgc" id="6nf-8M-6No"/>
+                            </connections>
+                        </picker>
+                        <label alignment="center" text="Label" id="WNS-Jv-dEH"/>
+                        <picker height="100" alignment="left" style="sequence" focusStyle="stack" id="NSu-Zv-fJN">
+                            <connections>
+                                <action selector="onTemperatureChanged:" destination="AgC-eL-Hgc" id="bSf-hm-wbE"/>
+                            </connections>
+                        </picker>
                     </items>
                     <connections>
+                        <outlet property="temperatureLabel" destination="WNS-Jv-dEH" id="vne-sO-tXw"/>
+                        <outlet property="temperaturePicker" destination="NSu-Zv-fJN" id="gIM-Of-N38"/>
                         <outlet property="timer" destination="2KO-8s-ubd" id="mdb-BY-FYP"/>
                         <outlet property="timerButton" destination="FYr-YL-YLF" id="i4c-k9-bAj"/>
                         <outlet property="weightPicker" destination="2lB-cS-n5D" id="uYy-9d-mS9"/>

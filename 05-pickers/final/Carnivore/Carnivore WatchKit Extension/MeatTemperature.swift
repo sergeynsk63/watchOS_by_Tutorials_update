@@ -30,7 +30,7 @@
 
 import Foundation
 
-enum MeatTemperature: Int {
+enum MeatTemperature: Int, CaseIterable {
     case rare = 0, mediumRare, medium, wellDone
     
     var stringValue: String {
@@ -60,5 +60,8 @@ struct Constants {
         static let gramsPerOunce = 28.3495
         static let oz = "oz"
         static let grams = "g"
+    }
+    struct Temperature {
+        static let imagePrefix = "temperature-"
     }
 }

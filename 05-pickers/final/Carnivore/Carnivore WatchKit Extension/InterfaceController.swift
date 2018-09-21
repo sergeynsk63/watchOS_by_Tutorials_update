@@ -38,10 +38,16 @@ class InterfaceController: WKInterfaceController {
     var timerRunning = false
     var usingMetric = false
     
+    let numberOfTemperatures = 4
+    
     // MARK: - Outlets
     @IBOutlet weak var timer: WKInterfaceTimer!
     @IBOutlet weak var timerButton: WKInterfaceButton!
     @IBOutlet weak var weightPicker: WKInterfacePicker!
+    
+    @IBOutlet weak var temperatureLabel: WKInterfaceLabel!
+    @IBOutlet weak var temperaturePicker: WKInterfacePicker!
+    
     
     // MARK: - Lifecycle
     override func awake(withContext context: Any?) {
@@ -49,7 +55,7 @@ class InterfaceController: WKInterfaceController {
         
         // 1
         var weightItems: [WKPickerItem] = []
-        for i in 1...32 {
+        for i in Constants.Weight.minOunces...Constants.Weight.maxOunces {
             // 2
             let item = WKPickerItem()
             item.title = String(i)
@@ -59,6 +65,19 @@ class InterfaceController: WKInterfaceController {
         weightPicker.setItems(weightItems)
         // 4
         weightPicker.setSelectedItemIndex(ounces - 1)
+        
+        // 1
+        var temperatureItems: [WKPickerItem] = []
+        for i in 1...MeatTemperature.allCases.count {
+            // 2
+            let item = WKPickerItem()
+            item.contentImage = WKImage(imageName: "\(Constants.Temperature.imagePrefix)\(i)")
+            temperatureItems.append(item)
+        }
+        // 3
+        temperaturePicker.setItems(temperatureItems)
+        // 4
+        onTemperatureChanged(0)
     }
     
     // MARK: - Helpers
@@ -81,4 +100,17 @@ class InterfaceController: WKInterfaceController {
         timerRunning = !timerRunning
         scroll(to: timer, at: .top, animated: true)
     }
+    
+    
+    @IBAction func onWeightChanged(_ value: Int) {
+        ounces = value + 1
+    }
+    
+    @IBAction func onTemperatureChanged(_ value: Int) {
+        let temp = MeatTemperature(rawValue: value)!
+        cookTemp = temp
+        temperatureLabel.setText(temp.stringValue)
+    }
+    
 }
+
